@@ -17,22 +17,20 @@ var articleOne=
                 `
 };
 
-create functiontemplate(data)
+function createTemplate(data)
 {
     var title=data.title;
     var content=data.content;
     var date=data.date;
-    var htmlcontent=
-{
-    content:
-    `
+    var htmltemplate=
+    {
          <html>
          <head>
             <title>
                 ${title}
             </title>
-            <meta name="viewport" width="width-device,initial-scale=1"/>
-                    <link href="/ui/style.css" rel="stylesheet" />
+            <meta name="viewport" content="width=width-device, initial-scale=1"/>
+            <link href="/ui/style.css" rel="stylesheet" />
         </head>
         <body>
             <div class="container">
@@ -49,7 +47,9 @@ create functiontemplate(data)
             </div>
         </body>
         </html>
-`
+    `;
+    return htmltemplate;
+    }   
 }
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
