@@ -7,7 +7,7 @@ app.use(morgan('combined'));
 
 var articles=
 {
-    article-one :
+    'article-one' :
 {
     title:'Article one | Samiksha Haware',
     heading:'Article one',
@@ -18,7 +18,7 @@ var articles=
                 </h1>
                 `
 },
-    article-two :
+    'article-two' :
 {
     title:'Article two | Samiksha Haware',
     heading:'Article two',
@@ -80,18 +80,11 @@ app.get('/ui/madi.png', function (req, res) {
 
 app.get('/articleName',function(req,res)
 {
+    var articleName=req.params.articleName;
+    
   res.send(createTemplate(articles[articleName]));
 });
 
-app.get('/articleName',function(req,res)
-{
-    res.send(createTemplate(articles[articleName");
-});
-
-app.get('/article-three',function(req,res)
-{
-    res.send("Article three requested and served here");
-});
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
