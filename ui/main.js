@@ -3,9 +3,9 @@ console.log('Loaded!');
 
 var img= document.getElementById('madi');
 
+    marinLeft=0;
 function moveRight()
 {
-    marinLeft=0;
     marginLeft=marginLeft+10;
     img.style.marginLeft=marginLeft+'px';
 }
