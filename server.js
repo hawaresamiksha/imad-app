@@ -5,7 +5,7 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var content=
+var articleOne=
 {
     title:'Article one | Samiksha Haware',
     heading:'Article one',
@@ -25,31 +25,32 @@ create functiontemplate(data)
     var htmlcontent=
 {
     content:
-    `<html>
-    <head>
-        <title>
-            ${title}
-        </title>
-        <meta name="viewport" width="width-device,initial-scale=1"/>
-                <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-    <body>
-        <div class="container">
-            <a ref="/"> Home</a>
-             <hr/>
-            <div>
-                <h1>
-                    ${content}
-                </h1>
-              <h1>
-                    ${date}
-                </h1>
+    `
+         <html>
+         <head>
+            <title>
+                ${title}
+            </title>
+            <meta name="viewport" width="width-device,initial-scale=1"/>
+                    <link href="/ui/style.css" rel="stylesheet" />
+        </head>
+        <body>
+            <div class="container">
+                <a ref="/"> Home</a>
+                <hr/>
+                <div>
+                    <h1>
+                        ${content}
+                    </h1>
+                    <h1>
+                        ${date}
+                    </h1>
+                </div>
             </div>
-        </div>
-    </body>
-</html>
+        </body>
+        </html>
 `
-};
+}
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -65,7 +66,7 @@ app.get('/ui/madi.png', function (req, res) {
 
 app.get('/article-one',function(req,res)
 {
-  res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+  res.send(createTemplate(articleOne));
 });
 
 app.get('/article-two',function(req,res)
