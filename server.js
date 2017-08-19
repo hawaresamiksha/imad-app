@@ -15,15 +15,20 @@ var content=
                     This is first article
                 </h1>
                 `
-}
+};
 
-var htmlcontent=
+create functiontemplate(data)
+{
+    var title=data.title;
+    var content=data.content;
+    var date=data.date;
+    var htmlcontent=
 {
     content:
     `<html>
     <head>
         <title>
-            Article One | Samiksha Haware
+            ${title}
         </title>
         <meta name="viewport" width="width-device,initial-scale=1"/>
                 <link href="/ui/style.css" rel="stylesheet" />
@@ -44,10 +49,11 @@ var htmlcontent=
     </body>
 </html>
 `
-}
+};
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+}
 
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
