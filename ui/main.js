@@ -1,15 +1,7 @@
-console.log('Loaded!');
-//Move the image
-
-var img= document.getElementById('madi');
-
-    marginLeft=0;
-function moveRight()
+var button=document.getButtonBuId("counter");
+button.onclick=function()
 {
-    marginLeft=marginLeft + 1;
-    img.style.marginLeft=marginLeft + 'px';
-}
-img.onclick=function ()
-{
-    var interval=setInterval(moveRight,50);
+    counter=counter+1;
+    var span=documetn.getElementById("count");
+    span.innerHTML=counter.toString();
 };
